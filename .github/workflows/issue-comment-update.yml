@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: add-comment
-        run: echo "New Issue has been created!" + ${{ github.event.issue.number }}
-
-
-
+        run: |
+          echo "New Issue has been created!" 
+          echo ${{ github.event.issue.number }}
+          echo "After printing the number"
