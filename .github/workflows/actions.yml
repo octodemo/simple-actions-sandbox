@@ -1,6 +1,9 @@
 name: simple-javascript-actions
 
-on: [push, pull_request]
+on: 
+  push: 
+  pull_request:
+    types: [closed, reopened]
 
 jobs:
   run-github-actions:
