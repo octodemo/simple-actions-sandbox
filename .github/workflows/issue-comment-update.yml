@@ -12,4 +12,5 @@ jobs:
         run: |
           echo "New Issue has been created!" 
           echo ${{ github.event.issue.number }}
+          echo ${{ github.event.issue.labels }}
           echo "After printing the number"
