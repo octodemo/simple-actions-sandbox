@@ -11,7 +11,7 @@ jobs:
       - name: multiline script
         run: |
           node -v
-          java -v
+          ls
       - name: python Command
         run: |
           import platform
