@@ -10,5 +10,6 @@ jobs:
         run: echo "Hello World"
       - name: multiline script
         run: |
-          ls
-          ls -ltr
+          node -v
+          java -v
+        
