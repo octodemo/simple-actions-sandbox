@@ -1,0 +1,15 @@
+name: issue-comment-watcher
+
+on: 
+  issues:
+    types: [ opened ]
+
+jobs:
+  update-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: add-comment
+        run: echo "New Issue has been created!"
+
+
+
