@@ -1,6 +1,6 @@
 name: simple-javascript-actions
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   run-github-actions:
@@ -15,7 +15,7 @@ jobs:
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo ${{ github.token }}
-          
+
       - name: checkout
         id: checkout-files
         uses: actions/checkout@main
