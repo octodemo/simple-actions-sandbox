@@ -9,7 +9,7 @@ jobs:
       - name: List files
         id: list-files
         run: |
-          ls
+          ls -a
           pwd
       - name: checkout
         id: checkout-files
@@ -17,7 +17,7 @@ jobs:
       - name: List files Post Checkout
         id: list-files-checkout
         run: |
-          ls
+          ls -a
           pwd
       - name: Simple JS Action
         id: greet
