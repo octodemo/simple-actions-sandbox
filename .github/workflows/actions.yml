@@ -14,6 +14,11 @@ jobs:
       - name: checkout
         id: checkout-files
         uses: actions/checkout@main
+      - name: List files Post Checkout
+        id: list-files-checkout
+        run: |
+          ls
+          pwd
       - name: Simple JS Action
         id: greet
         uses: actions/hello-world-javascript-action@main
