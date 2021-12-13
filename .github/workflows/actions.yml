@@ -11,6 +11,9 @@ jobs:
         run: |
           ls
           pwd
+      - name: checkout
+        id: checkout-files
+        uses: actions/checkout@main
       - name: Simple JS Action
         id: greet
         uses: actions/hello-world-javascript-action@main
