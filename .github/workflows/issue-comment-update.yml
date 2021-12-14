@@ -1,8 +1,12 @@
 name: issue-comment-watcher
+env: 
+  workflow_env: available to all jobs
 
 on: 
   issues:
     types: [ opened ]
+  push:
+    
 
 jobs:
   update-comment:
@@ -12,5 +16,5 @@ jobs:
         run: |
           echo "New Issue has been created!" 
           echo ${{ github.event.issue.number }}
-          echo ${{ github.event.issue.labels }}
+          echo ${{ github.event.issue.labels.*.name }}
           echo "After printing the number"
