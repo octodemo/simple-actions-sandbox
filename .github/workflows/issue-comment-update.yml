@@ -24,5 +24,4 @@ jobs:
         with:
           token: ${{ secrets.MOHANSPAT }}
           issue-number: ${{ github.event.issue.number }}
-          body: 
-            ${{ steps.template.output.result }}
+          body: ${{ steps.template.output.result }}
