@@ -12,21 +12,17 @@ jobs:
   update-comment:
     runs-on: ubuntu-latest
     steps:
-      - name: add-comment
-        run: |
-          echo "New Issue has been created!" 
-          echo ${{ github.event.issue.number }}
-          echo ${{ github.event.issue.labels.*.name[0] }}
-          echo "After printing the number"
+      - name: checkout-repo
+        uses: actions/checkout@main
+      - name: Render template
+        id: template
+        uses: chuhlomin/render-template@v1.2
+        with:
+          template: .github/ISSUE_TEMPLATE/call.md
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v1
         with:
           token: ${{ secrets.MOHANSPAT }}
           issue-number: ${{ github.event.issue.number }}
-          body: |
-            This is a multi-line test comment
-            - With GitHub **Markdown** :sparkles:
-            - Created by [create-or-update-comment][1]
-
-            [1]: https://github.com/peter-evans/create-or-update-comment
-          reactions: '+1'
+          body: 
+            ${{ steps.template.output.result }}
