@@ -3,9 +3,10 @@ env:
   workflow_env: available to all jobs
 
 on: 
-  issues:
-    types: [ opened ]
-  push:
+  #issues:
+   # types: [ opened ]
+  repository_dispatch:
+    types: [ add-comment ]
     
 
 jobs:
