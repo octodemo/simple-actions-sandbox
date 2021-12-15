@@ -13,3 +13,6 @@ jobs:
           echo "New Issue has been created!" 
           echo ${{ github.event.issue.number }}
           echo "After printing the number"
+
+# Adding extra contents!
+# More contents
