@@ -1,7 +1,7 @@
 name: simple-javascript-actions
 
-on: 
-  push: 
+on:
+  push:
   pull_request:
     types: [closed, reopened]
 
@@ -37,3 +37,4 @@ jobs:
 
 
 # Some more contents here
+# for the sake of committing!
