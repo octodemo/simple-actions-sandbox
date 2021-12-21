@@ -1,18 +1,10 @@
 name: issue-comment-watcher
+env: 
+  workflow_env: available to all jobs
 
 on: 
-  issues:
-    types: [ opened ]
-
-jobs:
-  update-comment:
-    runs-on: ubuntu-latest
-    steps:
-      - name: add-comment
-        run: |
-          echo "New Issue has been created!" 
-          echo ${{ github.event.issue.number }}
-          echo "After printing the number"
-
-# Adding extra contents!
-# More contents
+  #issues:
+   # types: [ opened ]
+  repository_dispatch:
+    types: [ add-comment ]
+   
