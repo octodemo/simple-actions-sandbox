@@ -25,4 +25,4 @@ mergeable:
       - do: comment
         payload:
           body: >
-            Your very long comment can go here.
+            Sorry. We found a few commits were missing Azure Boards Work Item ID. Can you please add those and do a PR again! 
