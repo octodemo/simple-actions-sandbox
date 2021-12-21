@@ -7,22 +7,4 @@ on:
    # types: [ opened ]
   repository_dispatch:
     types: [ add-comment ]
-    
-
-jobs:
-  update-comment:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout-repo
-        uses: actions/checkout@main
-      - name: Render template
-        id: template
-        uses: chuhlomin/render-template@v1.2
-        with:
-          template: .github/ISSUE_TEMPLATE/call.md
-      - name: Create comment
-        uses: peter-evans/create-or-update-comment@v1
-        with:
-          token: ${{ secrets.MOHANSPAT }}
-          issue-number: ${{ github.event.issue.number }}
-          body: ${{ steps.template.outputs.result }}
+   

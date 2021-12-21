@@ -1,0 +1,18 @@
+version: 2
+mergeable:
+  - when: pull_request.*, pull_request_review.*
+    name: check if individual commits have the Azure DevOps Boards Work Item ID
+    validate:
+      - do: commit
+        message:
+          regex: '^(feat|docs|chore|fix|refactor|test|style|perf)(\(\w+\))?:.+$'
+          message: 'Custom message' # Semantic release conventions must be followed
+          skip_merge: true # Optional, Default is true. Will skip commit with message that includes 'Merge'
+          oldest_only: false # Optional, Default is false. Only check the regex against the oldest commit
+          single_commit_only: false # Optional, Default is false. only process this validator if there is one commit
+    pass: # list of actions to be executed if all validation passes. Specify one or more. Omit this tag if no actions are needed.
+      - do: labels
+        add: 'Ready for Review'
+    fail: # list of actions to be executed when at least one validation fails. Specify one or more. Omit this tag if no actions are needed.
+      - do: labels
+        add: 'Non-Compliant'

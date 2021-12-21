@@ -1,7 +1,7 @@
 name: simple-javascript-actions
 
-on: 
-  push: 
+on:
+  push:
   pull_request:
     types: [closed, reopened]
 
@@ -34,3 +34,7 @@ jobs:
           who-to-greet: 'Mohan the Octocat'
       - name: Log Greeting Time
         run: echo "${{ steps.greet.outputs.time }}"
+
+
+# Some more contents here
+# for the sake of committing!
