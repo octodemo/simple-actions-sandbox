@@ -4,25 +4,21 @@ mergeable:
     validate:
       - do: commit
         message:
-            regex: '^feature'
-            message: 'Your pull request does not adhere to the branch naming convention described <a href="some link">there</a>!'
+            regex: '^(AB#[0-9]{1,})'
+
     pass: 
+      - do: comment
+        payload:
+          body: >
+            All commits in your PR have Azure Board Work Item IDs. Ready for Review!
       - do: labels
         add: 'Ready for Review'
+
+    fail:
       - do: comment
         payload:
           body: >
-            Your very long comment can go here, but hey we passed
-    fail: # list of actions to be executed when at least one validation fails. Specify one or more. Omit this tag if no actions are needed.
+            We found a few commits missing the Azure Boards Work Item ID. We will close this PR for now. Can you <a href="https://gist.github.com/nepsilon/156387acf9e1e72d48fa35c4fabef0b4">amend your commits</a> and start the PR again.
       - do: labels
         add: 'Non-Compliant'
-      - do: checks # default pass case
-        status: 'success' # Can be: success, failure, neutral, cancelled, timed_out, or action_required
-        payload:
-          title: 'Mergeable Run have been Completed!'
-          summary: "All the validators have returned 'pass'! \n Here are some stats of the run: \n {{validationCount}} validations were ran"
-      - do: comment
-        payload:
-          body: >
-            We found a few commits missing the Azure Boards Work Item ID. Can you <a href="https://gist.github.com/nepsilon/156387acf9e1e72d48fa35c4fabef0b4">amend your commits</a> and start the PR again.
       - do: close
