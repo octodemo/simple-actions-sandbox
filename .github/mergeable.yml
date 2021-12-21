@@ -4,10 +4,16 @@ mergeable:
     validate:
       - do: commit
         message:
-          regex: '^(AB#[0-9].)'
+            regex: '^feature'
+            message: 'Your pull request does not adhere to the branch naming convention described <a href="some link">there</a>!'
     pass: 
       - do: labels
         add: 'Ready for Review'
+      - do: comment
+        payload:
+          body: >
+            Your very long comment can go here, but hey we passed
+
     fail: # list of actions to be executed when at least one validation fails. Specify one or more. Omit this tag if no actions are needed.
       - do: labels
         add: 'Non-Compliant'
@@ -19,4 +25,4 @@ mergeable:
       - do: comment
         payload:
           body: >
-            Your very long comment can go here.
+            Sorry. We found a few commits were missing Azure Boards Work Item ID. Can you please add those and do a PR again! 
