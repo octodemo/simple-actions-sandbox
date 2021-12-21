@@ -4,19 +4,21 @@ mergeable:
     validate:
       - do: commit
         message:
-            regex: '^feature'
+            regex: '^(AB#[0-9]{1,})'
+
     pass: 
+      - do: comment
+        payload:
+          body: >
+            All commits in your PR have Azure Board Work Item IDs. Ready for Review!
       - do: labels
         add: 'Ready for Review'
+
+    fail:
       - do: comment
         payload:
           body: >
-            All commits in your PR have Azure Board Work Item IDs! You shall pass!
-    fail:
+            We found a few commits missing the Azure Boards Work Item ID. We will close this PR for now. Can you <a href="https://gist.github.com/nepsilon/156387acf9e1e72d48fa35c4fabef0b4">amend your commits</a> and start the PR again.
       - do: labels
         add: 'Non-Compliant'
-      - do: comment
-        payload:
-          body: >
-            We found a few commits missing the Azure Boards Work Item ID. Can you <a href="https://gist.github.com/nepsilon/156387acf9e1e72d48fa35c4fabef0b4">amend your commits</a> and start the PR again.
       - do: close
