@@ -9,7 +9,7 @@ mergeable:
       - do: comment
         payload:
           body: >
-           ### Successfully checked for Azure Work Item IDs in commits <br>
+           ### Successfully checked for Azure Work Item IDs in commits. <br>
            #### All commits in your PR have Azure Board Work Item IDs. Ready for Review! 
            :+1:
       - do: labels
