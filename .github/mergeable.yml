@@ -3,12 +3,14 @@ mergeable:
   - when: pull_request.*
     validate:
       - do: commit
-        # message:
-        #   regex: '^(AB#[0-9].)'
-        must_include:
-          regex: '^(feature|hotfix)\/.+$'
-          message: |
-              Your pull request doesn't adhere to the branch naming convention described <a href="some link">there</a>!
+        message:
+          must_include:
+            regex: 
+              - "^feature"
+              - "^hotfix"
+              - "^fix"
+            message: |
+                Your pull request doesn't adhere to the branch naming convention described <a href="some link">there</a>!
     pass: 
       - do: labels
         add: 'Ready for Review'
