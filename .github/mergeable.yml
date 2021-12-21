@@ -4,7 +4,6 @@ mergeable:
     validate:
       - do: commit
         message:
-          must_include:
             regex: 
               - "^feature"
               - "^hotfix"
