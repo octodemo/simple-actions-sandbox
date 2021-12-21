@@ -22,7 +22,7 @@ mergeable:
             ###Azure Boards Work Item IDs missing in commits
             <br>
             ####Some commits messages were found not having the Azure Boards Work Item ID (AB#1234).<br>
-            ####We will close this PR for now.<br>
+            ####We will close this PR for now. <br>
             ####To resolve, please do one of the following
             <ul>
               <li>Please identify your Azure Boards Work Item ID and <a href="https://gist.github.com/nepsilon/156387acf9e1e72d48fa35c4fabef0b4">amend your commits</a>, then start the PR again</li>
