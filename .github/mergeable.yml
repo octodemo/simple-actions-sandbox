@@ -5,22 +5,16 @@ mergeable:
       - do: commit
         message:
             regex: '^feature'
-            message: 'Your pull request does not adhere to the branch naming convention described <a href="some link">there</a>!'
     pass: 
       - do: labels
         add: 'Ready for Review'
       - do: comment
         payload:
           body: >
-            Your very long comment can go here, but hey we passed
-    fail: # list of actions to be executed when at least one validation fails. Specify one or more. Omit this tag if no actions are needed.
+            All commits in your PR have Azure Board Work Item IDs! You shall pass!
+    fail:
       - do: labels
         add: 'Non-Compliant'
-      - do: checks # default pass case
-        status: 'success' # Can be: success, failure, neutral, cancelled, timed_out, or action_required
-        payload:
-          title: 'Mergeable Run have been Completed!'
-          summary: "All the validators have returned 'pass'! \n Here are some stats of the run: \n {{validationCount}} validations were ran"
       - do: comment
         payload:
           body: >
