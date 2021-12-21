@@ -25,4 +25,5 @@ mergeable:
       - do: comment
         payload:
           body: >
-            Sorry. We found a few commits were missing Azure Boards Work Item ID. Can you please add those and do a PR again! 
+            We found a few commits missing the Azure Boards Work Item ID. Can you <a href="https://gist.github.com/nepsilon/156387acf9e1e72d48fa35c4fabef0b4">amend your commits</a> and start the PR again.
+      - do: close
