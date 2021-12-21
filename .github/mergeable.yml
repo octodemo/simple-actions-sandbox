@@ -9,13 +9,17 @@ mergeable:
       - do: comment
         payload:
           body: >
-            All commits in your PR have Azure Board Work Item IDs. Ready for Review!
+            ### Successfully checked for Azure Work Item IDs in commits
+            <br>
+            #### All commits in your PR have Azure Board Work Item IDs. Ready for Review!
+            :+1 
       - do: labels
         add: 'Ready for Review'
     fail:
       - do: comment
         payload:
           body: >
+            :warning
             ### Azure Boards Work Item IDs missing in commits
             <br>
             #### Some commits messages were found not having the Azure Boards Work Item ID (AB#1234).<br>
