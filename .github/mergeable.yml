@@ -16,8 +16,15 @@ mergeable:
       - do: comment
         payload:
           body: >
-            We found a few commits missing the Azure Boards Work Item ID. We will close this PR for now. Can you <a href="https://gist.github.com/nepsilon/156387acf9e1e72d48fa35c4fabef0b4">amend your commits</a> and start the PR again.
+            ### Work Item IDs missing
+            Some commits messages were found not having the Azure Boards Work Item ID (AB#1234).<br>
+            We will close this PR for now.<br>
+            
+            #### Please do one of the following
+            <ul>
+              <li>Please identify your Azure Boards Work Item ID and <a href="https://gist.github.com/nepsilon/156387acf9e1e72d48fa35c4fabef0b4">amend your commits</a>, then start the PR again</li>
+              <li>In case you do not have a Work Item ID to reference, please discuss with your reviewer(s) for alternate options</li>
+            </ul> 
       - do: labels
         add: 'Non-Compliant'
       - do: close
-      
