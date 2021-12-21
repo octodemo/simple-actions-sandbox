@@ -4,7 +4,7 @@ mergeable:
     validate:
       - do: commit
         message:
-            regex: '^AB#'
+            regex: '^(AB#[0-9]{1,})'
     pass: 
       - do: comment
         payload:
@@ -20,4 +20,4 @@ mergeable:
       - do: labels
         add: 'Non-Compliant'
       - do: close
-#commenting for pushes!
+      
