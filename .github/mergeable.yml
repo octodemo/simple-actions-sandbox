@@ -17,6 +17,7 @@ mergeable:
         payload:
           body: >
             ### Work Item IDs missing
+            <br>
             Some commits messages were found not having the Azure Boards Work Item ID (AB#1234).<br>
             We will close this PR for now.<br>
             
