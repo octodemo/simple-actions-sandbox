@@ -4,12 +4,8 @@ mergeable:
     validate:
       - do: commit
         message:
-            regex: 
-              - "^feature"
-              - "^hotfix"
-              - "^fix"
-            message: |
-                Your pull request doesn't adhere to the branch naming convention described <a href="some link">there</a>!
+            regex: '^feature'
+            message: 'Your pull request does not adhere to the branch naming convention described <a href="some link">there</a>!'
     pass: 
       - do: labels
         add: 'Ready for Review'
