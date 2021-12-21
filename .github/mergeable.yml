@@ -5,7 +5,6 @@ mergeable:
       - do: commit
         message:
             regex: '^(AB#[0-9]{1,})'
-
     pass: 
       - do: comment
         payload:
@@ -13,7 +12,6 @@ mergeable:
             All commits in your PR have Azure Board Work Item IDs. Ready for Review!
       - do: labels
         add: 'Ready for Review'
-
     fail:
       - do: comment
         payload:
@@ -22,3 +20,4 @@ mergeable:
       - do: labels
         add: 'Non-Compliant'
       - do: close
+#commenting for pushes!
