@@ -1,18 +1,18 @@
-name: issue-comment-watcher
+# name: issue-comment-watcher
 
-on: 
-  issues:
-    types: [ opened ]
+# on: 
+#   issues:
+#     types: [ opened ]
 
-jobs:
-  update-comment:
-    runs-on: ubuntu-latest
-    steps:
-      - name: add-comment
-        run: |
-          echo "New Issue has been created!" 
-          echo ${{ github.event.issue.number }}
-          echo "After printing the number"
+# jobs:
+#   update-comment:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: add-comment
+#         run: |
+#           echo "New Issue has been created!" 
+#           echo ${{ github.event.issue.number }}
+#           echo "After printing the number"
 
-# Adding extra contents!
-# More contents
+# # Adding extra contents!
+# # More contents
