@@ -4,7 +4,7 @@ mergeable:
     validate:
       - do: commit
         message:
-          regex: '^(AB#[0-9]+)(\(\w+\))?:.+$'
+          regex: '^(AB#[0-9].)'
     pass: 
       - do: labels
         add: 'Ready for Review'
@@ -16,3 +16,7 @@ mergeable:
         payload:
           title: 'Mergeable Run have been Completed!'
           summary: "All the validators have returned 'pass'! \n Here are some stats of the run: \n {{validationCount}} validations were ran"
+      - do: comment
+        payload:
+          body: >
+            Your very long comment can go here.
